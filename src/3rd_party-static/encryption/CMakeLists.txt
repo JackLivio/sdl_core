@@ -10,7 +10,7 @@ set (SOURCES
     ./src/hashing.cc
 )
 
-set (LIBRARIES crypto)
+set (LIBRARIES "/home/jack/raspberrypi/rootfs/usr/lib/arm-linux-gnueabihf/libcrypto.so")
 
 add_library("encryption" ${SOURCES})
 target_link_libraries("encryption" "${LIBRARIES}")

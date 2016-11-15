@@ -109,7 +109,6 @@ if(ENABLE_LOG)
 endif()
 
 if (BUILD_BT_SUPPORT)
-  target_link_libraries(${target} bluetooth)
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "QNX")

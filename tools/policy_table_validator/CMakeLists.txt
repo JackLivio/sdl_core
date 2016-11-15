@@ -16,6 +16,7 @@ link_directories (
 set(LIBRARIES
   policy_struct
   rpc_base
+  expat
 )
 
 set (SOURCES

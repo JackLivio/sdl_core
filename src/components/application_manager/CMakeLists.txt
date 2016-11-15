@@ -370,7 +370,7 @@ SET (LIBRARIES
 )
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  list(APPEND LIBRARIES sqlite3)
+  list(APPEND LIBRARIES "/home/jack/raspberrypi/rootfs/usr/lib/arm-linux-gnueabihf/libsqlite3.so")
 endif ()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "QNX")
@@ -397,7 +397,8 @@ add_library("ApplicationManager" ${SOURCES} ${RESUMPTION} ${APP_LAUNCH})
 target_link_libraries("ApplicationManager" ${LIBRARIES} AMHMICommandsLibrary
                                                         AMMobileCommandsLibrary
                                                         AMEventEngine
-                                                        AMPolicyLibrary)
+                                                        AMPolicyLibrary
+                                                        )
 
 if(ENABLE_LOG)
   target_link_libraries("ApplicationManager" log4cxx -L${LOG4CXX_LIBS_DIRECTORY})

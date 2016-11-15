@@ -81,11 +81,11 @@ if (CMAKE_SYSTEM_NAME STREQUAL "QNX")
 else ()
   # --- SQLite Wrapper
   include_directories (${COMPONENTS_DIR}/utils/include/utils)
-  list(APPEND LIBRARIES sqlite3)
+  list(APPEND LIBRARIES "/home/jack/raspberrypi/rootfs/usr/lib/arm-linux-gnueabihf/libsqlite3.so")
 endif ()
 
 add_library(${target} SHARED ${SOURCES})
-target_link_libraries(${target} ${LIBRARIES} )
+target_link_libraries(${target} ${LIBRARIES} "/home/jack/raspberrypi/rootfs/usr/lib/arm-linux-gnueabihf/libsqlite3.so")
 
 if(ENABLE_LOG)
   target_link_libraries(${target} log4cxx -L${LOG4CXX_LIBS_DIRECTORY})

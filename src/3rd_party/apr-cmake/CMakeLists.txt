@@ -44,6 +44,7 @@ file(COPY ${APR_SOURCE_DIRECTORY}/tools/gen_test_char.c
   DESTINATION ${APR_BUILD_DIRECTORY}/tools
 )
 
+
 if(CMAKE_SYSTEM_NAME STREQUAL "QNX")
   set(CONFIGURE_FLAGS
     "--host=${CMAKE_SYSTEM_PROCESSOR}-nto-qnx"
@@ -58,6 +59,17 @@ if(CMAKE_SYSTEM_NAME STREQUAL "QNX")
 else()
   set(CONFIGURE_FLAGS "")
 endif()
+
+set(CONFIGURE_FLAGS
+    "--host=arm-linux-gnueabihf"
+    "ac_cv_file__dev_zero=yes"
+    "ac_cv_func_setpgrp_void=yes"
+    "apr_cv_process_shared_works=yes"
+    "apr_cv_mutex_recursive=yes"
+    "apr_cv_mutex_robust_shared=no"
+    "apr_cv_tcp_nodelay_with_cork=no"
+    "ac_cv_sizeof_struct_iovec=8"
+    )
 
 add_custom_command(OUTPUT ${APR_BUILD_DIRECTORY}/Makefile
   COMMAND CC=${CMAKE_C_COMPILER} ${APR_SOURCE_DIRECTORY}/configure ${CONFIGURE_FLAGS}
