@@ -34,6 +34,7 @@
 
 #include "application_manager/message_helper.h"
 #include "protocol_handler/protocol_handler.h"
+#include "utils/system.h"
 
 namespace application_manager {
 
@@ -104,6 +105,10 @@ void NaviStartStreamRequest::on_event(const event_engine::Event& event) {
         if (application_manager_.HMILevelAllowsStreaming(
                 app->app_id(), ServiceType::kMobileNav)) {
           app->set_video_streaming_approved(true);
+
+          if(!utils::System("./desktopRight.sh").Execute()) {
+              LOG4CXX_FATAL(logger_, " stream Failed to shift desktopright");
+            }
         } else {
           LOG4CXX_DEBUG(
               logger_,
