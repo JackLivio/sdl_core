@@ -102,7 +102,7 @@ void ResumptionDataJson::SaveApplication(
   json_app[strings::time_stamp] = time_stamp;
   json_app[strings::subscribed_for_way_points] = is_subscribed_for_way_points;
 
-  LOG4CXX_DEBUG(logger_, "SaveApplication : " << json_app.toStyledString());
+  //LOG4CXX_DEBUG(logger_, "SaveApplication : " << json_app.toStyledString());
 }
 
 bool ResumptionDataJson::IsHMIApplicationIdExist(uint32_t hmi_app_id) const {

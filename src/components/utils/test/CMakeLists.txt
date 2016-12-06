@@ -83,7 +83,7 @@ if (CMAKE_SYSTEM_NAME STREQUAL "QNX")
   file(COPY policy.sql DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 else ()
   # --- Tests for SQLite Wrapper
-  find_package(Sqlite3 REQUIRED)
+  #find_package(Sqlite3 REQUIRED)
   list (APPEND testSources
     ./sqlite_wrapper/sql_database_test.cc
     ./sqlite_wrapper/sql_query_test.cc

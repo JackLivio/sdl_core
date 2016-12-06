@@ -74,7 +74,7 @@ if (CMAKE_SYSTEM_NAME STREQUAL "QNX")
   file(COPY ${POLICY_DIR}/test/policy.sql DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 else ()
   # --- Tests for SQLite Wrapper
-  find_package(Sqlite3 REQUIRED)
+  #find_package(Sqlite3 REQUIRED)
   include_directories(${POLICY_DIR}/src/policy/sqlite_wrapper/include)
   list (APPEND testSources
     ${POLICY_DIR}/test/sqlite_wrapper/sql_database_test.cc

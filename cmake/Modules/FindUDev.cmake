@@ -23,6 +23,7 @@ FIND_LIBRARY(
     PATHS
         /usr/lib${LIB_SUFFIX}
         /usr/local/lib${LIB_SUFFIX}
+        /home/jack/raspberrypi/rootfs/lib/arm-linux-gnueabihf
         ${UDEV_PATH_LIB}
 )
 

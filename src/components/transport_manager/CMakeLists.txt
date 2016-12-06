@@ -109,6 +109,7 @@ if(ENABLE_LOG)
 endif()
 
 if (BUILD_BT_SUPPORT)
+ target_link_libraries(${target} /home/jack/raspberrypi/rootfs/usr/lib/arm-linux-gnueabihf/libbluetooth.a)
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "QNX")
