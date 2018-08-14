@@ -231,8 +231,8 @@ bool RPCHandlerImpl::ConvertMessageToSO(
                      output[strings::params][strings::function_id].asInt())) {
         if (output.keyExists(
                 NsSmartDeviceLink::NsJSONHandler::strings::S_MSG_PARAMS) &&
-                output[NsSmartDeviceLink::NsJSONHandler::strings::S_MSG_PARAMS]
-                    .keyExists(strings::sync_msg_version)) {
+            output[NsSmartDeviceLink::NsJSONHandler::strings::S_MSG_PARAMS]
+                .keyExists(strings::sync_msg_version)) {
           // SyncMsgVersion exists, check if it is valid.
           std::string str_msg_version =
               output[NsSmartDeviceLink::NsJSONHandler::strings::S_MSG_PARAMS]
